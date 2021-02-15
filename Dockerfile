@@ -16,5 +16,7 @@ RUN set -o allexport \
     && set +o allexport \
     && apk add --no-cache py3-pyzmq \
     && python -m pip install --no-cache-dir nbconvert \
+    # We'll always need ipykernel when sharing notebooks so that everyone can still run the notebook locally.
+    && python -m pip install --no-cache-dir ipykernel \
     && . ./cleanup.sh
 
