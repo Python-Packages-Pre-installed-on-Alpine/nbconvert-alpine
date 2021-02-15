@@ -14,6 +14,7 @@ ADD $CLEANUP_SCRIPT_LOCATION .
 RUN set -o allexport \
     && . ./fix_all_gotchas.sh \
     && set +o allexport \
+    && apk add --no-cache py3-pyzmq \
     && python -m pip install --no-cache-dir nbconvert \
     && . ./cleanup.sh
 
