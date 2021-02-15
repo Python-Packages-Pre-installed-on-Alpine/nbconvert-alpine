@@ -14,7 +14,7 @@ ADD $CLEANUP_SCRIPT_LOCATION .
 RUN set -o allexport \
     && . ./fix_all_gotchas.sh \
     && set +o allexport \
-    && apk add --no-cache py3-argon2-cffi \
+    && apk add --no-cache py3-argon2-cffi py3-cffi \
     && python -m pip install --no-cache-dir ipywidgets \
     && . ./cleanup.sh
 
