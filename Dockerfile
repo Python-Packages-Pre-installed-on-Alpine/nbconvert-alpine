@@ -19,5 +19,6 @@ RUN set -o allexport \
     && apk add --no-cache --virtual .build-deps R-dev musl-dev libffi-dev \
     && python -m pip install --no-cache-dir --no-build-isolation rpy2 \
     && apk del --no-cache .build-deps \
-    && . ./cleanup.sh
+    && . ./cleanup.sh \
+    && python -c "import rpy2"
 
