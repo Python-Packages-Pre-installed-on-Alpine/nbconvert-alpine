@@ -17,7 +17,7 @@ RUN set -o allexport \
     && set +o allexport \
     && apk add --no-cache R py3-cffi \
     && apk add --no-cache --virtual .build-deps R-dev \
-    && python -m pip install --no-cache-dir rpy2 \
+    && python -m pip install --no-cache-dir --no-build-isolation rpy2 \
     && apk del --no-cache .build-deps \
     && . ./cleanup.sh
 
