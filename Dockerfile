@@ -16,7 +16,7 @@ RUN set -o allexport \
     && . ./fix_all_gotchas.sh \
     && set +o allexport \
     && apk add --no-cache R py3-cffi \
-    && apk add --no-cache --virtual .build-deps R-dev \
+    && apk add --no-cache --virtual .build-deps R-dev musl-dev \
     && python -m pip install --no-cache-dir --no-build-isolation rpy2 \
     && apk del --no-cache .build-deps \
     && . ./cleanup.sh
