@@ -15,7 +15,7 @@ ADD $CLEANUP_SCRIPT_LOCATION .
 RUN set -o allexport \
     && . ./fix_all_gotchas.sh \
     && set +o allexport \
-    && apk add --no-cache R-dev \
+    && apk add --no-cache R-dev py3-cffi \
     && apk add --no-cache --virtual .build-deps gcc make \
     && python -m pip install --no-cache-dir rpy2 \
     && apk del --no-cache .build-deps \
